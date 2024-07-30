@@ -1,5 +1,7 @@
 ## DJANGO DOCUMENTATION STUDY NOTES 
 
+This repository contains the code iu wrote the time i was going through django documentation. It only contains django code and few html. Feel free to ask questions where you dont understand. 
+
 ### 1. Django Installation
 
 
