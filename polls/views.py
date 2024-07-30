@@ -28,21 +28,27 @@ class IndexView(generic.ListView):
 
 #detail view class based version
 class Polls_DetailView(generic.DetailView):
-    
-def detail(request, question_id):
-    question = get_object_or_404(Question, pk=question_id)
-    context = {
-        "question": question
-    }
-    return render(request, "polls/detail.html", context)
+    model = Question
+    template_name = "polls/detail.html"
 
-def results(request, question_id):
+# def detail(request, question_id):
+#     question = get_object_or_404(Question, pk=question_id)
+#     context = {
+#         "question": question
+#     }
+#     return render(request, "polls/detail.html", context)
+
+class ResultsView(generic.DetailView):
+    model = Question
     template_name = "polls/results.html"
-    question = get_object_or_404(Question, pk=question_id)
-    context = {
-        "question": question
-    }
-    return render(request, template_name, context)
+
+# def results(request, question_id):
+#     template_name = "polls/results.html"
+#     question = get_object_or_404(Question, pk=question_id)
+#     context = {
+#         "question": question
+#     }
+#     return render(request, template_name, context)
 
 def vote(request, question_id):
     question = get_object_or_404(Question, pk=question_id)
